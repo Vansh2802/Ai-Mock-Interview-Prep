@@ -31,12 +31,12 @@ export default function Dashboard() {
   return (
     <div className="space-y-12">
       <header>
-        <h1 className="text-4xl font-serif font-bold text-[#1A1A1A]">Start Your Practice</h1>
-        <p className="text-[#1A1A1A]/60 mt-2 text-lg">Select a role and difficulty level to begin your AI-powered mock interview.</p>
+        <h1 className="text-4xl font-serif font-bold text-[#1A1A1A] dark:text-[#F5F5F0]">Start Your Practice</h1>
+        <p className="text-[#1A1A1A]/60 dark:text-[#F5F5F0]/60 mt-2 text-lg">Select a role and difficulty level to begin your AI-powered mock interview.</p>
       </header>
 
       <section className="space-y-6">
-        <h2 className="text-xl font-bold text-[#1A1A1A]">Select Role</h2>
+        <h2 className="text-xl font-bold text-[#1A1A1A] dark:text-[#F5F5F0]">Select Role</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {roles.map((role) => (
             <motion.button
@@ -47,21 +47,21 @@ export default function Dashboard() {
               className={cn(
                 "p-6 rounded-[24px] border-2 text-left transition-all",
                 selectedRole === role.title
-                  ? "border-[#5A5A40] bg-white shadow-lg shadow-black/5"
-                  : "border-transparent bg-white hover:border-[#5A5A40]/30"
+                  ? "border-[#5A5A40] dark:border-[#A8A880] bg-white dark:bg-[#141414] shadow-lg shadow-black/5 dark:shadow-white/5"
+                  : "border-transparent bg-white dark:bg-[#141414] hover:border-[#5A5A40]/30 dark:hover:border-[#A8A880]/30"
               )}
             >
               <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center mb-4", role.color)}>
                 <role.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-[#1A1A1A]">{role.title}</h3>
+              <h3 className="font-bold text-lg text-[#1A1A1A] dark:text-[#F5F5F0]">{role.title}</h3>
             </motion.button>
           ))}
         </div>
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-xl font-bold text-[#1A1A1A]">Difficulty Level</h2>
+        <h2 className="text-xl font-bold text-[#1A1A1A] dark:text-[#F5F5F0]">Difficulty Level</h2>
         <div className="flex gap-4">
           {difficulties.map((diff) => (
             <button
@@ -70,8 +70,8 @@ export default function Dashboard() {
               className={cn(
                 "px-8 py-3 rounded-full font-medium transition-all",
                 selectedDifficulty === diff.id
-                  ? "bg-[#5A5A40] text-white"
-                  : "bg-white text-[#1A1A1A]/60 hover:bg-black/5"
+                  ? "bg-[#5A5A40] text-white dark:bg-[#A8A880] dark:text-[#1A1A1A]"
+                  : "bg-white dark:bg-[#141414] text-[#1A1A1A]/60 dark:text-[#F5F5F0]/60 hover:bg-black/5 dark:hover:bg-white/5"
               )}
             >
               {diff.label}
@@ -84,7 +84,7 @@ export default function Dashboard() {
         <button
           onClick={handleStart}
           disabled={!selectedRole}
-          className="group relative w-full md:w-auto bg-[#5A5A40] text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#4A4A30] transition-all disabled:opacity-50 flex items-center justify-center gap-3 overflow-hidden"
+          className="group relative w-full md:w-auto bg-[#5A5A40] dark:bg-[#A8A880] text-white dark:text-[#1A1A1A] px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#4A4A30] dark:hover:bg-[#989870] transition-all disabled:opacity-50 flex items-center justify-center gap-3 overflow-hidden"
         >
           <Sparkles className="w-5 h-5" />
           <span>Start Interview</span>

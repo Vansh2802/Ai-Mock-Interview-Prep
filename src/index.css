@@ -7,5 +7,9 @@
 }
 
 body {
-  @apply font-sans text-[#1A1A1A] bg-[#F5F5F0];
+  @apply font-sans text-[#1A1A1A] bg-[#F5F5F0] transition-colors duration-300;
+}
+
+.dark body {
+  @apply text-[#F5F5F0] bg-[#1A1A1A];
 }
