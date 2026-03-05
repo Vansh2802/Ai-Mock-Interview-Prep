@@ -238,7 +238,7 @@ export default function InterviewSession() {
               value={currentAnswer}
               onChange={(e) => setCurrentAnswer(e.target.value)}
               placeholder="Type your answer here..."
-              className="w-full h-48 bg-[#F5F5F0] dark:bg-[#1A1A1A] border-none rounded-2xl p-6 text-lg focus:ring-2 focus:ring-[#5A5A40] dark:focus:ring-[#A8A880] transition-all resize-none dark:text-[#F5F5F0]"
+              className="w-full h-48 bg-[#F5F5F0] dark:bg-[#1A1A1A] text-[#1A1A1A] dark:text-[#F5F5F0] border border-black/10 dark:border-white/10 rounded-2xl p-6 text-lg outline-none focus:ring-2 focus:ring-[#5A5A40] dark:focus:ring-[#A8A880] focus:border-transparent placeholder:text-[#1A1A1A]/30 dark:placeholder:text-[#F5F5F0]/30 transition-all resize-none"
             />
           </div>
 
